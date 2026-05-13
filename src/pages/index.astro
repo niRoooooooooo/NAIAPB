@@ -1,11 +1,89 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/style.css";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>NAIAPB</title>
+		<link rel="icon" type="image/svg+xml" href="/NAIAPB.svg" />
+	</head>
+
+	<body>
+		<!-- NAVBAR -->
+		<header class="transparent">
+			<nav class="navbar">
+				<div class="logo">
+					<a href="/">
+						<img src="/assets/navlogo.svg" alt="NAIAPB Logo" />
+					</a>
+				</div>
+
+				<div class="nav-links">
+					<a href="#home">Home</a>
+					<a href="#about">About Us</a>
+					<a href="#workshops">Workshops</a>
+					<a href="#partners">Partners</a>
+				</div>
+
+				<div class="nav-cta">
+					<a href="#join">Join Us</a>
+				</div>
+			</nav>
+		</header>
+
+		<!-- HERO -->
+		<section id="home" class="home-hero">
+			<div class="hero-banner">
+				<img
+					src="/assets/hero.png"
+					alt="Hero Banner"
+					class="hero-image"
+				/>
+				<div class="hero-overlay"></div>
+
+				<div class="hero-content">
+					<h1 class="typing-text">
+						Learn. Build. Grow together.
+						<span class="cursor">|</span>
+					</h1>
+
+					<div class="hero-cta">
+						<a href="/workshops/join" class="btn btn-primary">
+							Join a Workshop
+						</a>
+
+						<a href="/workshops/host" class="btn btn-outline">
+							Host a Workshop
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="about"></section>
+		<section id="workshops"></section>
+		<section id="partners"></section>
+		<section id="join"></section>
+
+		<!-- NAVBAR SCROLL SCRIPT -->
+		<script is:inline>
+			const header = document.querySelector("header");
+
+			function updateNavbar() {
+				if (window.scrollY > 50) {
+					header.classList.add("solid");
+					header.classList.remove("transparent");
+				} else {
+					header.classList.add("transparent");
+					header.classList.remove("solid");
+				}
+			}
+
+			window.addEventListener("scroll", updateNavbar);
+			updateNavbar();
+		</script>
+	</body>
+</html>
