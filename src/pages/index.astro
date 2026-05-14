@@ -84,32 +84,62 @@ import "../styles/style.css";
 						<div class="team-card">
 							<div class="team-member">
 								<img
-									src="/assets/team/1.png"
-									alt="Team Member 1"
+									src="/assets/shihab.jpg"
+									alt="Shihab"
 									class="team-photo"
 								/>
-								<h3>John Doe</h3>
-								<p>Founder & CEO</p>
+								<div class="team-info">
+									<h3>Shihab</h3>
+									<p>CEO</p>
+								</div>
 							</div>
 
 							<div class="team-member">
 								<img
-									src="/assets/team/2.png"
-									alt="Team Member 2"
+									src="/assets/niloy.jpg"
+									alt="Niloy"
 									class="team-photo"
 								/>
-								<h3>Jane Smith</h3>
-								<p>CTO</p>
+								<div class="team-info">
+									<h3>Niloy</h3>
+									<p>CMO</p>
+								</div>
 							</div>
 
 							<div class="team-member">
 								<img
-									src="/assets/team/3.png"
-									alt="Team Member 3"
+									src="/assets/sameul.jpg"
+									alt="Samuel"
 									class="team-photo"
 								/>
-								<h3>Emily Davis</h3>
-								<p>Head of Partnerships</p>
+								<div class="team-info">
+									<h3>Samuel</h3>
+									<p>CTO</p>
+								</div>
+							</div>
+
+							<div class="team-member">
+								<img
+									src="/assets/utshob.jpg"
+									alt="Utshob"
+									class="team-photo"
+								/>
+								<div class="team-info">
+									<h3>Utshob</h3>
+									<p>DEVELOPER</p>
+								</div>
+							</div>
+
+							<div class="team-member">
+								<img
+									src="/assets/mubin.jpg"
+									alt="Mubin"
+									class="team-photo"
+								/>
+								<div class="team-info">
+									<h3>Mubin</h3>
+									<p>SPEAKER</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -143,7 +173,7 @@ import "../styles/style.css";
 							</div>
 
 							<h4>Data Science Summit</h4>
-							<p>Software Engineering Dept · Oct 2023</p>
+							<p>Department of Software Engineering · Oct 2023</p>
 
 							<button>View Details</button>
 						</div>
@@ -169,34 +199,52 @@ import "../styles/style.css";
 
 					<div class="partners-list">
 						<!-- Partner 1 -->
-						<div class="partner-card">
-							<div class="partner-logo">
-								<span>hub</span>
-							</div>
+						<a href="https://dslab.daffodilvarsity.edu.bd/" style="text-decoration: none; color: inherit;">
+							<div class="partner-card">
+								<div class="partner-logo">
+									<img src="/assets/datalab.png" alt="Partner Logo" style="width: 120px; height: 120px; display: block; margin: 0 auto; object-fit: contain;" />
+								</div>
 
-							<h4>Data Science Club</h4>
-							<p>Fostering Peer Learning</p>
-						</div>
+								<h4>Data Science Lab</h4>
+								<p>Fostering Peer Learning</p>
+							</div>
+						</a>
 
 						<!-- Partner 2 -->
-						<div class="partner-card">
-							<div class="partner-logo">
-								<span>account_balance</span>
-							</div>
+						<a href="https://daffodilvarsity.edu.bd/" style="text-decoration: none; color: inherit;">
+							<div class="partner-card">
+								<div class="partner-logo">
+									<img src="/assets/daffodil-logo.png" alt="Partner Logo" style="width: 120px; height: 120px; display: block; margin: 0 auto; object-fit: contain;" />
+								</div>
 
-							<h4>Daffodil International University</h4>
-							<p>Primary Research Partner</p>
-						</div>
+								<h4>Daffodil International University</h4>
+								<p>Primary Research Partner</p>
+							</div>
+						</a>
 
 						<!-- Partner 3 -->
-						<div class="partner-card">
-							<div class="partner-logo">
-								<span>terminal</span>
-							</div>
+						<a href="https://daffodilvarsity.edu.bd/department/swe" style="text-decoration: none; color: inherit;">
+							<div class="partner-card">
+								<div class="partner-logo">
+									<img src="/assets/swe.png" alt="Partner Logo" style="width: 120px; height: 120px; display: block; margin: 0 auto; object-fit: contain;" />
+								</div>
 
-							<h4>Software Engineering Dept</h4>
-							<p>Technical Integration</p>
-						</div>
+								<h4>Department of Software Engineering</h4>
+								<p>Technical Integration</p>
+							</div>
+						</a>
+
+						<!-- Partner 4 -->
+						<a href="https://dslab.daffodilvarsity.edu.bd/club" style="text-decoration: none; color: inherit;">
+							<div class="partner-card">
+								<div class="partner-logo">
+									<img src="/assets/dataclub.png" alt="Partner Logo" style="width: 120px; height: 120px; display: block; margin: 0 auto; object-fit: contain;" />
+								</div>
+
+								<h4>Data Science Club</h4>
+								<p>Fostering Peer Learning</p>
+							</div>
+						</a>
 					</div>
 				</div>
 			</section>
@@ -251,10 +299,10 @@ import "../styles/style.css";
 
 					<ul>
 						<li>
-							<a href="#">Daffodil International University</a>
+							<a href="https://daffodilvarsity.edu.bd/">Daffodil International University</a>
 						</li>
-						<li><a href="#">Data Science Lab</a></li>
-						<li><a href="#">Data Science Club</a></li>
+						<li><a href="https://dslab.daffodilvarsity.edu.bd/">Data Science Lab</a></li>
+						<li><a href="https://dslab.daffodilvarsity.edu.bd/club">Data Science Club</a></li>
 					</ul>
 				</div>
 
@@ -262,9 +310,9 @@ import "../styles/style.css";
 					<h5>Quick Links</h5>
 
 					<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Workshops</a></li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="#about">About Us</a></li>
+						<li><a href="#workshops">Workshops</a></li>
+						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</div>
 

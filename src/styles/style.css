@@ -28,7 +28,7 @@
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
 
-  --section-pad: 130px 20px;
+  --section-pad: 130px 10px;
   --max-width: 1600px;
 }
 
@@ -247,8 +247,10 @@ header.solid .nav-cta a:hover { background: #333; }
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 90%;
-  max-width: 1200px;
+  width: min(100%, var(--max-width));
+  max-width: var(--max-width);
+  padding: 0 10px;
+  box-sizing: border-box;
   animation: heroFadeUp 1.2s var(--ease-out-expo) 0.3s both;
 }
 
@@ -369,6 +371,9 @@ section {
 .about-data {
   max-width: var(--max-width);
   margin: 0 auto;
+  width: min(100%, var(--max-width));
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 /* Mission Block */
@@ -407,13 +412,7 @@ section {
 }
 
 .about-data > div:first-child h2::after {
-  content: '';
-  width: 60px;
-  height: 3px;
-  background: var(--green);
-  display: block;
-  margin: 24px auto 0;
-  border-radius: 50px;
+  display: none;
 }
 
 .about-data > div:first-child p {
@@ -469,44 +468,30 @@ section {
 }
 
 .team-section h2::after {
-  content: '';
-  width: 60px;
-  height: 3px;
-  background: var(--green);
-  display: block;
-  margin: 20px auto 0;
-  border-radius: 50px;
+  display: none;
 }
 
 .team-card {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
 }
 
 .team-member {
   background: var(--white);
   border: 1px solid var(--gray-200);
-  padding: 48px 32px;
-  text-align: center;
   border-radius: 20px;
   position: relative;
   overflow: hidden;
   transition: all 0.4s var(--ease-out-expo);
+  height: 480px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Top accent line */
 .team-member::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--navy), var(--green));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s var(--ease-out-expo);
+  display: none;
 }
 
 .team-member:hover {
@@ -516,38 +501,54 @@ section {
 }
 
 .team-member:hover::before {
-  transform: scaleX(1);
+  display: none;
 }
 
 .team-photo {
-  width: 140px;
-  height: 140px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 24px;
-  border: 4px solid var(--gray-100);
+  border-radius: 0;
+  margin-bottom: 0;
+  border: none;
   transition: all 0.4s ease;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .team-member:hover .team-photo {
-  border-color: var(--green);
+  border-color: transparent;
   transform: scale(1.04);
+}
+
+.team-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 33, 71, 0.95), rgba(0, 33, 71, 0.7), transparent);
+  padding: 28px 24px 20px;
+  text-align: center;
+  z-index: 2;
 }
 
 .team-member h3 {
   font-family: var(--font-display);
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 400;
-  color: var(--navy);
-  margin-bottom: 8px;
+  color: var(--white);
+  margin: 0;
+  margin-bottom: 4px;
 }
 
 .team-member p {
-  font-size: 15px;
+  font-size: 13px;
   color: var(--green);
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  margin: 0;
 }
 
 /* =========================
@@ -574,6 +575,9 @@ section {
 .workshop-details {
   max-width: var(--max-width);
   margin: 0 auto;
+  width: min(100%, var(--max-width));
+  padding: 0 10px;
+  box-sizing: border-box;
   position: relative;
   z-index: 1;
 }
@@ -593,13 +597,7 @@ section {
 }
 
 .workshop-header h2::after {
-  content: '';
-  width: 60px;
-  height: 3px;
-  background: var(--green);
-  display: block;
-  margin: 20px auto 0;
-  border-radius: 50px;
+  display: none;
 }
 
 .workshop-header p {
@@ -610,7 +608,7 @@ section {
 
 .workshop-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 28px;
 }
 
@@ -755,6 +753,9 @@ section {
 .partners-info {
   max-width: var(--max-width);
   margin: 0 auto;
+  width: min(100%, var(--max-width));
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 .partners-info h2 {
@@ -768,30 +769,24 @@ section {
 }
 
 .partners-info h2::after {
-  content: '';
-  width: 60px;
-  height: 3px;
-  background: var(--green);
-  display: block;
-  margin: 20px auto 80px;
-  border-radius: 50px;
+  display: none;
 }
 
 .partners-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
   justify-content: center;
   align-items: stretch;
-  gap: 24px;
-  flex-wrap: wrap;
 }
 
 .partner-card {
   width: 360px;
-  min-height: 260px;
+  height: 320px;
   background: var(--white);
   border: 1px solid var(--gray-200);
   border-radius: 20px;
-  padding: 48px 32px;
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -804,14 +799,7 @@ section {
 
 /* Hover fill from bottom */
 .partner-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: var(--navy);
-  transform: translateY(100%);
-  transition: transform 0.5s var(--ease-out-expo);
-  z-index: 0;
-  border-radius: 20px;
+  display: none;
 }
 
 .partner-card:hover {
@@ -821,20 +809,20 @@ section {
 }
 
 .partner-card:hover::before {
-  transform: translateY(0);
+  display: none;
 }
 
 .partner-card:hover .partner-logo,
 .partner-card:hover h4,
 .partner-card:hover p {
-  color: var(--white);
-  border-color: rgba(255,255,255,0.2);
+  color: inherit;
+  border-color: inherit;
   position: relative;
   z-index: 1;
 }
 
 .partner-card:hover .partner-logo {
-  background: rgba(255,255,255,0.1);
+  background: transparent;
 }
 
 .partner-card:hover .partner-logo span {
@@ -844,7 +832,7 @@ section {
 .partner-logo {
   width: 80px;
   height: 80px;
-  background: var(--gray-100);
+  background: transparent;
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -929,6 +917,9 @@ section {
 .mission-container {
   max-width: 900px;
   margin: 0 auto;
+  width: min(100%, var(--max-width));
+  padding: 0 10px;
+  box-sizing: border-box;
   text-align: center;
   position: relative;
   z-index: 2;
