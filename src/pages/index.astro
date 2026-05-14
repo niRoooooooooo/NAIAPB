@@ -34,39 +34,256 @@ import "../styles/style.css";
 			</nav>
 		</header>
 
-		<!-- HERO -->
-		<section id="home" class="home-hero">
-			<div class="hero-banner">
-				<img
-					src="/assets/hero.png"
-					alt="Hero Banner"
-					class="hero-image"
-				/>
-				<div class="hero-overlay"></div>
+		<main>
+			<!-- HERO -->
+			<section id="home" class="home-hero">
+				<div class="hero-banner">
+					<img
+						src="/assets/hero.png"
+						alt="Hero Banner"
+						class="hero-image"
+					/>
+					<div class="hero-overlay"></div>
 
-				<div class="hero-content">
-					<h1 class="typing-text">
-						Learn. Build. Grow together.
-						<span class="cursor">|</span>
-					</h1>
+					<div class="hero-content">
+						<h1 class="typing-text">
+							Learn. Build. Grow together.
+							<span class="cursor">|</span>
+						</h1>
 
-					<div class="hero-cta">
-						<a href="/workshops/join" class="btn btn-primary">
-							Join a Workshop
-						</a>
+						<div class="hero-cta">
+							<a href="/workshops/join" class="btn btn-primary">
+								Join a Workshop
+							</a>
 
-						<a href="/workshops/host" class="btn btn-outline">
-							Host a Workshop
-						</a>
+							<a href="/workshops/host" class="btn btn-outline">
+								Host a Workshop
+							</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</section>
+			</section>
 
-		<section id="about"></section>
-		<section id="workshops"></section>
-		<section id="partners"></section>
-		<section id="join"></section>
+			<section class="about-section" id="about">
+				<div class="about-data">
+					<div>
+						<h2>Our Mission</h2>
+						<p>
+							NAIAPB serves as the cornerstone for national AI
+							development. Our mission is to democratize
+							high-level AI education, fostering innovation that
+							bridges academic theory and industrial application.
+							We envision a future where technology enhances human
+							potential across every sector.
+						</p>
+					</div>
+
+					<div class="team-section">
+						<h2>Meet the team</h2>
+
+						<div class="team-card">
+							<div class="team-member">
+								<img
+									src="/assets/team/1.png"
+									alt="Team Member 1"
+									class="team-photo"
+								/>
+								<h3>John Doe</h3>
+								<p>Founder & CEO</p>
+							</div>
+
+							<div class="team-member">
+								<img
+									src="/assets/team/2.png"
+									alt="Team Member 2"
+									class="team-photo"
+								/>
+								<h3>Jane Smith</h3>
+								<p>CTO</p>
+							</div>
+
+							<div class="team-member">
+								<img
+									src="/assets/team/3.png"
+									alt="Team Member 3"
+									class="team-photo"
+								/>
+								<h3>Emily Davis</h3>
+								<p>Head of Partnerships</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="workshop-section" id="workshops">
+				<div class="workshop-details">
+					<div class="workshop-header">
+						<h2>Past Events</h2>
+						<p>Relive our most impactful learning experiences.</p>
+					</div>
+
+					<div class="workshop-list">
+						<!-- Event 1 -->
+						<div class="workshop-card">
+							<div>
+								<img alt="Workshop Event Image" />
+							</div>
+
+							<h4>Neural Networks Workshop 2023</h4>
+							<p>Daffodil International University · Dec 2023</p>
+
+							<button>View Details</button>
+						</div>
+
+						<!-- Event 2 -->
+						<div class="workshop-card">
+							<div>
+								<img alt="Data Science Event Image" />
+							</div>
+
+							<h4>Data Science Summit</h4>
+							<p>Software Engineering Dept · Oct 2023</p>
+
+							<button>View Details</button>
+						</div>
+
+						<!-- Event 3 -->
+						<div class="workshop-card">
+							<div>
+								<img alt="AI Ethics Event Image" />
+							</div>
+
+							<h4>AI Ethics Roundtable</h4>
+							<p>Data Science Lab · June 2023</p>
+
+							<button>View Details</button>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="partners-section" id="partners">
+				<div class="partners-info">
+					<h2>Our Academic Partners</h2>
+
+					<div class="partners-list">
+						<!-- Partner 1 -->
+						<div class="partner-card">
+							<div class="partner-logo">
+								<span>hub</span>
+							</div>
+
+							<h4>Data Science Club</h4>
+							<p>Fostering Peer Learning</p>
+						</div>
+
+						<!-- Partner 2 -->
+						<div class="partner-card">
+							<div class="partner-logo">
+								<span>account_balance</span>
+							</div>
+
+							<h4>Daffodil International University</h4>
+							<p>Primary Research Partner</p>
+						</div>
+
+						<!-- Partner 3 -->
+						<div class="partner-card">
+							<div class="partner-logo">
+								<span>terminal</span>
+							</div>
+
+							<h4>Software Engineering Dept</h4>
+							<p>Technical Integration</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Mission Section -->
+			<section class="mission-section" id="mission">
+				<div class="mission-container">
+					<h2 class="mission-title">Support Our Mission</h2>
+
+					<p class="mission-description">
+						Join us in shaping the future of AI. Whether you are an
+						institution, a corporate leader, or an AI enthusiast,
+						your contribution can drive the next wave of innovation.
+					</p>
+
+					<div class="mission-actions">
+						<button class="primary-button">
+							Become a Partner
+						</button>
+
+						<button class="secondary-button">
+							Donate to Research
+						</button>
+					</div>
+				</div>
+
+				<!-- Background Shapes -->
+				<div class="background-shape shape-top-right"></div>
+				<div class="background-shape shape-bottom-left"></div>
+			</section>
+		</main>
+
+		<!-- Footer -->
+		<footer>
+			<div>
+				<div>
+					<span>NAIAPB</span>
+
+					<p>
+						Empowering the future through AI education and
+						professional program building.
+					</p>
+
+					<div>
+						<span>share</span>
+						<span>language</span>
+					</div>
+				</div>
+
+				<div>
+					<h5>Partners</h5>
+
+					<ul>
+						<li>
+							<a href="#">Daffodil International University</a>
+						</li>
+						<li><a href="#">Data Science Lab</a></li>
+						<li><a href="#">Data Science Club</a></li>
+					</ul>
+				</div>
+
+				<div>
+					<h5>Quick Links</h5>
+
+					<ul>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Workshops</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+
+				<div>
+					<h5>Legal</h5>
+
+					<ul>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Terms</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div>
+				<p>
+					© 2024 NAIAPB. Empowering the future through AI education.
+				</p>
+			</div>
+		</footer>
 
 		<!-- NAVBAR SCROLL SCRIPT -->
 		<script is:inline>
