@@ -473,8 +473,23 @@ section {
 
 .team-card {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   gap: 24px;
+}
+
+.team-card-1 {
+  grid-template-columns: repeat(1, 280px);
+  margin: 0 auto 40px;
+  justify-content: center;
+}
+
+.team-card-2 {
+  grid-template-columns: repeat(3, 280px);
+  margin: 0 auto 40px;
+  justify-content: center;
+}
+
+.team-card-3 {
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .team-member {
@@ -484,7 +499,7 @@ section {
   position: relative;
   overflow: hidden;
   transition: all 0.4s var(--ease-out-expo);
-  height: 480px;
+  height: 432px;
   display: flex;
   flex-direction: column;
 }
@@ -714,6 +729,7 @@ section {
   transition: all 0.3s var(--ease-in-out);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 /* Fill animation on hover */
@@ -724,22 +740,32 @@ section {
   background: var(--navy);
   transform: translateY(100%);
   transition: transform 0.35s var(--ease-out-expo);
-  z-index: 0;
+  z-index: -1;
 }
 
 .workshop-card button:hover::before {
   transform: translateY(0);
 }
 
-.workshop-card button span,
-.workshop-card button {
-  position: relative;
-  z-index: 1;
-}
-
 .workshop-card button:hover {
   color: var(--white);
   border-color: var(--navy);
+}
+
+.workshop-card .event-link {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  text-decoration: none;
+  padding: 0 28px 8px;
+  transition: color 0.3s ease;
+}
+
+.workshop-card .event-link:hover {
+  color: var(--green);
+  text-decoration: underline;
 }
 
 /* =========================
@@ -1210,6 +1236,134 @@ footer > div:last-child p {
 @media (max-width: 480px) {
   .hero-cta { flex-direction: column; }
   .btn { width: 100%; justify-content: center; }
+}
+
+/* =========================
+   SOCIAL ICONS STYLING
+========================= */
+.social-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.social-icon-link {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-in-out);
+  position: relative;
+  overflow: visible;
+  line-height: 1;
+  background: transparent;
+}
+
+.social-icon-link::before {
+  display: none;
+}
+
+.social-icon-link:hover {
+  background: #000000;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Remove individual color styling for footer */
+.social-icon-link[title="Facebook"],
+.social-icon-link[title="LinkedIn"],
+.social-icon-link[title="Instagram"],
+.social-icon-link[title="Twitter"],
+.social-icon-link[title="Email"] {
+  color: #000000;
+  border-color: #000000;
+}
+
+/* Team member social icons */
+.team-social {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-social.hidden {
+  display: none;
+}
+
+.team-social.show {
+  display: flex;
+  opacity: 1;
+}
+
+.team-member .social-icon-link {
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  animation: slideIn 0.4s var(--ease-out-expo) backwards;
+  transition: all 0.3s var(--ease-in-out);
+}
+
+.team-member .social-icon-link[title="Facebook"] {
+  color: #1877F2;
+  border-color: #1877F2;
+}
+
+.team-member .social-icon-link[title="LinkedIn"] {
+  color: #0A66C2;
+  border-color: #0A66C2;
+}
+
+.team-member .social-icon-link[title="Instagram"] {
+  color: #E4405F;
+  border-color: #E4405F;
+}
+
+.team-member .social-icon-link[title="Twitter"] {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.team-member .social-icon-link[title="Email"] {
+  color: #EA4335;
+  border-color: #EA4335;
+}
+
+.team-member .social-icon-link:hover {
+  transform: scale(1.15) translateY(-2px);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.team-member .social-icon-link:nth-child(1) { animation-delay: 0.1s; }
+.team-member .social-icon-link:nth-child(2) { animation-delay: 0.15s; }
+.team-member .social-icon-link:nth-child(3) { animation-delay: 0.2s; }
+.team-member .social-icon-link:nth-child(4) { animation-delay: 0.25s; }
+.team-member .social-icon-link:nth-child(5) { animation-delay: 0.3s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* =========================
