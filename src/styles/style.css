@@ -586,6 +586,10 @@ body.night-mode header.solid .theme-btn:hover {
   letter-spacing: -0.02em;
 }
 
+body.night-mode .typing-text {
+  color: #4dd9b3;
+}
+
 .cursor {
   color: var(--green-light);
   animation: blink 1s infinite;
@@ -624,10 +628,20 @@ body.night-mode header.solid .theme-btn:hover {
   color: var(--navy);
 }
 
+body.night-mode .btn-primary {
+  background: var(--green);
+  color: #ffffff;
+}
+
 .btn-primary:hover {
   background: #f0f4ff;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+body.night-mode .btn-primary:hover {
+  background: var(--green-light);
+  box-shadow: 0 8px 24px rgba(10,124,90,0.4);
 }
 
 .btn-outline {
@@ -636,11 +650,22 @@ body.night-mode header.solid .theme-btn:hover {
   backdrop-filter: blur(4px);
 }
 
+body.night-mode .btn-outline {
+  border: 1.5px solid rgba(255,255,255,0.9);
+  color: #ffffff;
+}
+
 .btn-outline:hover {
   background: white;
   color: var(--navy);
   border-color: white;
   transform: translateY(-2px);
+}
+
+body.night-mode .btn-outline:hover {
+  background: #ffffff;
+  color: #002147;
+  border-color: #ffffff;
 }
 
 /* Scroll indicator */
@@ -825,6 +850,10 @@ body.night-mode header.solid .theme-btn:hover {
   pointer-events: none;
   letter-spacing: -0.02em;
   z-index: 0;
+}
+
+body.night-mode .about-data > div:first-child::before {
+  color: rgba(200, 200, 200, 0.15);
 }
 
 .about-data h2 {
@@ -1326,7 +1355,7 @@ body.night-mode header.solid .theme-btn:hover {
   font-size: clamp(38px, 4vw, 60px);
   font-weight: 400;
   color: var(--navy);
-  margin-bottom: 16px;
+  margin-bottom: 70px;
   line-height: 1.15;
 }
 
@@ -1358,6 +1387,11 @@ body.night-mode header.solid .theme-btn:hover {
   position: relative;
   overflow: hidden;
   transform-style: preserve-3d;
+}
+
+body.night-mode .partner-card {
+  background: #ffffff;
+  border-color: #e2e8f0;
 }
 
 /* Hover fill from bottom */
@@ -1435,8 +1469,20 @@ body.night-mode header.solid .theme-btn:hover {
   z-index: 1;
 }
 
+body.night-mode .partner-card h4 {
+  color: #002147;
+}
+
+body.night-mode .partner-card p {
+  color: #0a7c5a;
+}
+
 .partner-card:hover p {
-  color: rgba(255,255,255,0.7);
+  color: transparent;
+}
+
+body.night-mode .partner-card:hover p {
+  color: transparent;
 }
 
 /* Middle card highlight */
@@ -1509,6 +1555,10 @@ body.night-mode header.solid .theme-btn:hover {
   padding: var(--section-pad);
 }
 
+body.night-mode .mission-section {
+  background: #e8eef5;
+}
+
 /* Mesh gradient background */
 .mission-section::before {
   content: '';
@@ -1552,6 +1602,10 @@ body.night-mode header.solid .theme-btn:hover {
   letter-spacing: -0.02em;
 }
 
+body.night-mode .mission-title {
+  color: #0a0a0a;
+}
+
 .mission-description {
   max-width: 680px;
   margin: 0 auto 52px;
@@ -1559,6 +1613,10 @@ body.night-mode header.solid .theme-btn:hover {
   font-size: clamp(16px, 1.3vw, 20px);
   line-height: 1.85;
   font-weight: 400;
+}
+
+body.night-mode .mission-description {
+  color: rgba(0, 0, 0, 0.75);
 }
 
 .mission-actions {
@@ -1723,6 +1781,10 @@ footer > div:first-child > div:first-child span:first-child {
   letter-spacing: -0.01em;
 }
 
+body.night-mode footer > div:first-child > div:first-child span:first-child {
+  color: #ffffff;
+}
+
 footer > div:first-child > div:first-child p {
   font-size: 15px;
   line-height: 1.8;
@@ -1757,6 +1819,23 @@ footer > div:first-child > div:first-child > div span:hover {
   background: rgba(10,124,90,0.08);
 }
 
+/* Footer social icons specifically */
+footer .social-links .social-icon-link {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  color: rgba(255,255,255,0.7);
+  background: transparent;
+  font-size: 18px;
+}
+
+footer .social-links .social-icon-link:hover {
+  border-color: var(--green);
+  color: var(--green);
+  background: rgba(10,124,90,0.1);
+}
+
 /* Footer nav columns */
 footer h5 {
   font-family: var(--font-body);
@@ -1783,6 +1862,10 @@ footer ul li a {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+}
+
+body.night-mode footer ul li a {
+  color: rgba(255,255,255,0.65);
 }
 
 footer ul li a:hover {
