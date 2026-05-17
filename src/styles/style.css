@@ -56,10 +56,20 @@ body {
   overflow-x: hidden;
 }
 
-/* =========================
-   SCROLL ANIMATION SYSTEM
-   (Astro-compatible, pure CSS)
-========================= */
+/* Progress bar at top */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--green), var(--green-light));
+  width: 0%;
+  z-index: 10000;
+  transition: width 0.1s ease;
+}
+
+/* Scroll reveal animations */
 [data-reveal] {
   opacity: 0;
   transform: translateY(48px);
@@ -196,7 +206,8 @@ header.solid .nav-cta a:hover { background: #333; }
    HERO SECTION
 ========================= */
 .home-hero {
-  height: 100vh;
+  height: auto;
+  min-height: 1080px;
   position: relative;
   display: flex;
   align-items: center;
@@ -207,6 +218,9 @@ header.solid .nav-cta a:hover { background: #333; }
 .hero-banner {
   position: absolute;
   inset: 0;
+  max-width: 1920px;
+  max-height: 1080px;
+  margin: 0 auto;
 }
 
 .hero-image {
@@ -214,11 +228,13 @@ header.solid .nav-cta a:hover { background: #333; }
   height: 100%;
   object-fit: cover;
   transform: scale(1.06);
-  animation: heroZoom 10s ease forwards;
+  animation: heroZoom 8s ease-out forwards;
 }
 
 @keyframes heroZoom {
-  to { transform: scale(1); }
+  0% { transform: scale(1.06); }
+  50% { transform: scale(1.01); }
+  100% { transform: scale(1); }
 }
 
 .hero-overlay {
@@ -244,13 +260,14 @@ header.solid .nav-cta a:hover { background: #333; }
 
 .hero-content {
   position: absolute;
-  bottom: 10%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -30%);
   width: min(100%, var(--max-width));
   max-width: var(--max-width);
   padding: 0 10px;
   box-sizing: border-box;
+  text-align: center;
   animation: heroFadeUp 1.2s var(--ease-out-expo) 0.3s both;
 }
 
@@ -284,6 +301,7 @@ header.solid .nav-cta a:hover { background: #333; }
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .btn {
@@ -298,6 +316,7 @@ header.solid .nav-cta a:hover { background: #333; }
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 }
 
 .btn-primary {
@@ -636,6 +655,7 @@ section {
   flex-direction: column;
   transition: all 0.4s var(--ease-out-expo);
   position: relative;
+  transform-style: preserve-3d;
 }
 
 .workshop-card::after {
@@ -821,6 +841,7 @@ section {
   transition: all 0.4s var(--ease-out-expo);
   position: relative;
   overflow: hidden;
+  transform-style: preserve-3d;
 }
 
 /* Hover fill from bottom */
@@ -1169,9 +1190,48 @@ footer > div:last-child p {
   letter-spacing: 0.03em;
 }
 
-/* =========================
-   ANIMATIONS (Keyframes)
-========================= */
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marqueeReverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes morphShape {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+@keyframes parallaxDrift {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(20px); }
+}
+
+@keyframes colorWipe {
+  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+@keyframes magneticFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+@keyframes infiniteScroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes kineticType {
+  0% { opacity: 0; transform: translateX(-100px) skewX(-10deg); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: translateX(100px) skewX(10deg); }
+}
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(40px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1366,18 +1426,61 @@ footer > div:last-child p {
   }
 }
 
-/* =========================
-   SCROLL REVEAL SCRIPT HOOK
-   Add this <script is:inline> to your layout:
+/* Advanced Animation Classes */
+.morph-shape {
+  animation: morphShape 4s ease-in-out infinite;
+}
 
-   const observer = new IntersectionObserver(
-     (entries) => entries.forEach(e => {
-       if (e.isIntersecting) {
-         e.target.classList.add('is-visible');
-         observer.unobserve(e.target);
-       }
-     }),
-     { threshold: 0.12 }
-   );
-   document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
-========================= */
+.parallax-element {
+  animation: parallaxDrift 6s ease-in-out infinite;
+}
+
+.magnetic-float {
+  animation: magneticFloat 3s ease-in-out infinite;
+}
+
+.kinetic-text {
+  animation: kineticType 8s ease-in-out infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.x-ray-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.x-ray-reveal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(0px at 50% 50%);
+  transition: clip-path 0.1s ease-out;
+}
+
+/* Horizontal scroll snap section */
+.horizontal-scroll-section {
+  scroll-snap-type: x mandatory;
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+.horizontal-scroll-section > * {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  flex: 0 0 100%;
+}
+
+/* Text expansion effect */
+.text-expand {
+  position: relative;
+  display: inline-block;
+}
+
+.text-expand-content {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  animation: colorWipe 1s ease-out forwards;
+}
